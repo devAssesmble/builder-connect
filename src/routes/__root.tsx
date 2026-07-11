@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "CMNHousing BRM Console" },
+      { name: "description", content: "Builder Relationship Manager dashboard for CMNHousing — CRM, sales, support and project management for builders." },
+      { name: "author", content: "CMNHousing" },
+      { property: "og:title", content: "CMNHousing BRM Console" },
+      { property: "og:description", content: "Builder CRM, subscriptions, approvals, support and revenue in one command center." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@CMNHousing" },
     ],
     links: [
       {
