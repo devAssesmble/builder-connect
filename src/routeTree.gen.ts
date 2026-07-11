@@ -9,61 +9,394 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppRouteImport } from './routes/_app'
+import { Route as AppIndexRouteImport } from './routes/_app.index'
+import { Route as AppSupportRouteImport } from './routes/_app.support'
+import { Route as AppSubscriptionsRouteImport } from './routes/_app.subscriptions'
+import { Route as AppSiteVisitsRouteImport } from './routes/_app.site-visits'
+import { Route as AppSettingsRouteImport } from './routes/_app.settings'
+import { Route as AppReportsRouteImport } from './routes/_app.reports'
+import { Route as AppProjectsRouteImport } from './routes/_app.projects'
+import { Route as AppPerformanceRouteImport } from './routes/_app.performance'
+import { Route as AppPaymentsRouteImport } from './routes/_app.payments'
+import { Route as AppNotificationsRouteImport } from './routes/_app.notifications'
+import { Route as AppMarketingRouteImport } from './routes/_app.marketing'
+import { Route as AppLeadsRouteImport } from './routes/_app.leads'
+import { Route as AppDocumentsRouteImport } from './routes/_app.documents'
+import { Route as AppBuildersRouteImport } from './routes/_app.builders'
+import { Route as AppApprovalsRouteImport } from './routes/_app.approvals'
+import { Route as AppAnalyticsRouteImport } from './routes/_app.analytics'
 
-const IndexRoute = IndexRouteImport.update({
+const AppRoute = AppRouteImport.update({
+  id: '/_app',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppIndexRoute = AppIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSupportRoute = AppSupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSubscriptionsRoute = AppSubscriptionsRouteImport.update({
+  id: '/subscriptions',
+  path: '/subscriptions',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSiteVisitsRoute = AppSiteVisitsRouteImport.update({
+  id: '/site-visits',
+  path: '/site-visits',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSettingsRoute = AppSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppReportsRoute = AppReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppProjectsRoute = AppProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPerformanceRoute = AppPerformanceRouteImport.update({
+  id: '/performance',
+  path: '/performance',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPaymentsRoute = AppPaymentsRouteImport.update({
+  id: '/payments',
+  path: '/payments',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppNotificationsRoute = AppNotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppMarketingRoute = AppMarketingRouteImport.update({
+  id: '/marketing',
+  path: '/marketing',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppLeadsRoute = AppLeadsRouteImport.update({
+  id: '/leads',
+  path: '/leads',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppDocumentsRoute = AppDocumentsRouteImport.update({
+  id: '/documents',
+  path: '/documents',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppBuildersRoute = AppBuildersRouteImport.update({
+  id: '/builders',
+  path: '/builders',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppApprovalsRoute = AppApprovalsRouteImport.update({
+  id: '/approvals',
+  path: '/approvals',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAnalyticsRoute = AppAnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => AppRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/': typeof AppIndexRoute
+  '/analytics': typeof AppAnalyticsRoute
+  '/approvals': typeof AppApprovalsRoute
+  '/builders': typeof AppBuildersRoute
+  '/documents': typeof AppDocumentsRoute
+  '/leads': typeof AppLeadsRoute
+  '/marketing': typeof AppMarketingRoute
+  '/notifications': typeof AppNotificationsRoute
+  '/payments': typeof AppPaymentsRoute
+  '/performance': typeof AppPerformanceRoute
+  '/projects': typeof AppProjectsRoute
+  '/reports': typeof AppReportsRoute
+  '/settings': typeof AppSettingsRoute
+  '/site-visits': typeof AppSiteVisitsRoute
+  '/subscriptions': typeof AppSubscriptionsRoute
+  '/support': typeof AppSupportRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
+  '/analytics': typeof AppAnalyticsRoute
+  '/approvals': typeof AppApprovalsRoute
+  '/builders': typeof AppBuildersRoute
+  '/documents': typeof AppDocumentsRoute
+  '/leads': typeof AppLeadsRoute
+  '/marketing': typeof AppMarketingRoute
+  '/notifications': typeof AppNotificationsRoute
+  '/payments': typeof AppPaymentsRoute
+  '/performance': typeof AppPerformanceRoute
+  '/projects': typeof AppProjectsRoute
+  '/reports': typeof AppReportsRoute
+  '/settings': typeof AppSettingsRoute
+  '/site-visits': typeof AppSiteVisitsRoute
+  '/subscriptions': typeof AppSubscriptionsRoute
+  '/support': typeof AppSupportRoute
+  '/': typeof AppIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/_app': typeof AppRouteWithChildren
+  '/_app/analytics': typeof AppAnalyticsRoute
+  '/_app/approvals': typeof AppApprovalsRoute
+  '/_app/builders': typeof AppBuildersRoute
+  '/_app/documents': typeof AppDocumentsRoute
+  '/_app/leads': typeof AppLeadsRoute
+  '/_app/marketing': typeof AppMarketingRoute
+  '/_app/notifications': typeof AppNotificationsRoute
+  '/_app/payments': typeof AppPaymentsRoute
+  '/_app/performance': typeof AppPerformanceRoute
+  '/_app/projects': typeof AppProjectsRoute
+  '/_app/reports': typeof AppReportsRoute
+  '/_app/settings': typeof AppSettingsRoute
+  '/_app/site-visits': typeof AppSiteVisitsRoute
+  '/_app/subscriptions': typeof AppSubscriptionsRoute
+  '/_app/support': typeof AppSupportRoute
+  '/_app/': typeof AppIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/analytics'
+    | '/approvals'
+    | '/builders'
+    | '/documents'
+    | '/leads'
+    | '/marketing'
+    | '/notifications'
+    | '/payments'
+    | '/performance'
+    | '/projects'
+    | '/reports'
+    | '/settings'
+    | '/site-visits'
+    | '/subscriptions'
+    | '/support'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/analytics'
+    | '/approvals'
+    | '/builders'
+    | '/documents'
+    | '/leads'
+    | '/marketing'
+    | '/notifications'
+    | '/payments'
+    | '/performance'
+    | '/projects'
+    | '/reports'
+    | '/settings'
+    | '/site-visits'
+    | '/subscriptions'
+    | '/support'
+    | '/'
+  id:
+    | '__root__'
+    | '/_app'
+    | '/_app/analytics'
+    | '/_app/approvals'
+    | '/_app/builders'
+    | '/_app/documents'
+    | '/_app/leads'
+    | '/_app/marketing'
+    | '/_app/notifications'
+    | '/_app/payments'
+    | '/_app/performance'
+    | '/_app/projects'
+    | '/_app/reports'
+    | '/_app/settings'
+    | '/_app/site-visits'
+    | '/_app/subscriptions'
+    | '/_app/support'
+    | '/_app/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  AppRoute: typeof AppRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
+    '/_app': {
+      id: '/_app'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_app/': {
+      id: '/_app/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof AppIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/support': {
+      id: '/_app/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof AppSupportRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/subscriptions': {
+      id: '/_app/subscriptions'
+      path: '/subscriptions'
+      fullPath: '/subscriptions'
+      preLoaderRoute: typeof AppSubscriptionsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/site-visits': {
+      id: '/_app/site-visits'
+      path: '/site-visits'
+      fullPath: '/site-visits'
+      preLoaderRoute: typeof AppSiteVisitsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/settings': {
+      id: '/_app/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof AppSettingsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/reports': {
+      id: '/_app/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof AppReportsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/projects': {
+      id: '/_app/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof AppProjectsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/performance': {
+      id: '/_app/performance'
+      path: '/performance'
+      fullPath: '/performance'
+      preLoaderRoute: typeof AppPerformanceRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/payments': {
+      id: '/_app/payments'
+      path: '/payments'
+      fullPath: '/payments'
+      preLoaderRoute: typeof AppPaymentsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/notifications': {
+      id: '/_app/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof AppNotificationsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/marketing': {
+      id: '/_app/marketing'
+      path: '/marketing'
+      fullPath: '/marketing'
+      preLoaderRoute: typeof AppMarketingRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/leads': {
+      id: '/_app/leads'
+      path: '/leads'
+      fullPath: '/leads'
+      preLoaderRoute: typeof AppLeadsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/documents': {
+      id: '/_app/documents'
+      path: '/documents'
+      fullPath: '/documents'
+      preLoaderRoute: typeof AppDocumentsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/builders': {
+      id: '/_app/builders'
+      path: '/builders'
+      fullPath: '/builders'
+      preLoaderRoute: typeof AppBuildersRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/approvals': {
+      id: '/_app/approvals'
+      path: '/approvals'
+      fullPath: '/approvals'
+      preLoaderRoute: typeof AppApprovalsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/analytics': {
+      id: '/_app/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AppAnalyticsRouteImport
+      parentRoute: typeof AppRoute
     }
   }
 }
 
+interface AppRouteChildren {
+  AppAnalyticsRoute: typeof AppAnalyticsRoute
+  AppApprovalsRoute: typeof AppApprovalsRoute
+  AppBuildersRoute: typeof AppBuildersRoute
+  AppDocumentsRoute: typeof AppDocumentsRoute
+  AppLeadsRoute: typeof AppLeadsRoute
+  AppMarketingRoute: typeof AppMarketingRoute
+  AppNotificationsRoute: typeof AppNotificationsRoute
+  AppPaymentsRoute: typeof AppPaymentsRoute
+  AppPerformanceRoute: typeof AppPerformanceRoute
+  AppProjectsRoute: typeof AppProjectsRoute
+  AppReportsRoute: typeof AppReportsRoute
+  AppSettingsRoute: typeof AppSettingsRoute
+  AppSiteVisitsRoute: typeof AppSiteVisitsRoute
+  AppSubscriptionsRoute: typeof AppSubscriptionsRoute
+  AppSupportRoute: typeof AppSupportRoute
+  AppIndexRoute: typeof AppIndexRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppAnalyticsRoute: AppAnalyticsRoute,
+  AppApprovalsRoute: AppApprovalsRoute,
+  AppBuildersRoute: AppBuildersRoute,
+  AppDocumentsRoute: AppDocumentsRoute,
+  AppLeadsRoute: AppLeadsRoute,
+  AppMarketingRoute: AppMarketingRoute,
+  AppNotificationsRoute: AppNotificationsRoute,
+  AppPaymentsRoute: AppPaymentsRoute,
+  AppPerformanceRoute: AppPerformanceRoute,
+  AppProjectsRoute: AppProjectsRoute,
+  AppReportsRoute: AppReportsRoute,
+  AppSettingsRoute: AppSettingsRoute,
+  AppSiteVisitsRoute: AppSiteVisitsRoute,
+  AppSubscriptionsRoute: AppSubscriptionsRoute,
+  AppSupportRoute: AppSupportRoute,
+  AppIndexRoute: AppIndexRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  AppRoute: AppRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
